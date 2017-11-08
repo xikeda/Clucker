@@ -1,8 +1,53 @@
-<ul class="list-group">
-  {{#each clucks}}
-    <a href="/clucker/{{id}}" class="list-group-item">{{username}} {{content}}</a>
-  {{/each}}
-</ul>
-<a type="button" class="btn btn-default btn-primary" href="/clucker/new">
-  Cluck!
-</a>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/clucker"><img src="https://cdn.iconscout.com/public/images/icon/free/png-128/rooster-food-chicken-chick-animal-36ef95620b035487-128x128.png" id="brand">
+      </a>
+    </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a type="button" class="btn btn-success" href="/clucker/new" style="color: white;">Cluck!</a></li>
+      </ul>
+    </div>
+    <!--/.nav-collapse -->
+  </div>
+  <!--/.container-fluid -->
+</nav>
+
+<div class="row">
+  <div class="col-sm-2">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        Trending Clucks:
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-8">
+    <ul id="ml" class="list-group" style="list-style: none;">
+      <!-- List Clucks -->
+      {{#each clucks}}
+      <!-- Cluck -->
+        <li>
+          <a href="/clucker/{{id}}" class="list-group-item">
+            <div class="row">
+              <div class="col-lg-2">
+                <img src="https://cdn.iconscout.com/public/images/icon/free/png-128/rooster-food-chicken-chick-animal-36ef95620b035487-128x128.png">
+              </div>
+              <div class="col-lg-10">
+                {{username}}   •   {{created_at}} <br />
+                {{content}}
+              </div>
+            </div>
+          </a>
+        </li>
+      <!-- /Cluck -->
+      {{/each}}
+    </ul>
+  </div>
+  <div class="col-sm-2">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          You may also like:
+        </div>
+      </div>
+  </div>
+</div>
